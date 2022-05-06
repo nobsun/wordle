@@ -1,3 +1,3 @@
-# Changelog for simple-interactive-program
+# Changelog for wordle
 
 ## Unreleased changes

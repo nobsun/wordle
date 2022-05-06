@@ -1,5 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
-module TransitionSpec
+module WordleSpec
   ( spec
   ) where
 
@@ -9,7 +9,7 @@ import qualified Data.ByteString as B
 import Test.Main
 import Test.Hspec
 import Text.Show.Unicode
-import Transition
+import Wordle
 
 newtype UString a = UString a deriving Eq
 
@@ -23,7 +23,7 @@ instance Show a => Show (UString a) where
   show (UString s) = ushow s
 
 spec :: Spec
-spec = describe "responser"
+spec = describe "wordle"
   $ it "任意の入力文字列を\"なんか関数\"に変換" 
   $ map UString (responser undefined ["Hi!", "元気?"]) `shouldBe` ["なんか関数", "なんか関数"]
 

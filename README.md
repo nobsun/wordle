@@ -1,8 +1,16 @@
-# simple-interactive-program
+# wordle
 
-単純な対話プログラムの雛形
+## 起動
 
-対話プログラムは `responder :: String -> ([String] -> [String])` 関数で表現される。
-`responder` の実態は、`MachineState` 上の状態遷移系である。
-
-初期状態を生成する `initial :: String -> [String] -> MachineState` および `eval :: MachineState -> [MachineState]` の下請けである `isFinal :: MachineState -> Bool` と `step :: MachineState -> MachineState` を実装すればよい。
+```shell-session
+$ wordle [path/to/words]
+? <guess> <pattern>
+……
+……〈濾過された５文字単語の一覧〉
+……
+?
+```
+`<pattern>` は５文字のパターン文字列。パターン文字は以下の３種
+- `b`：黒
+- `y`：黄
+- `g`：緑

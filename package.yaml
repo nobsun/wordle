@@ -1,6 +1,6 @@
-name:                simple-interactive-program
-version:             0.2.1.1
-github:              "nobsun/simple-interactive-program"
+name:                wordle
+version:             0.1.0.0
+github:              "nobsun/wordle"
 license:             BSD3
 author:              "Nobuo Yamashita"
 maintainer:          "nobsun@sampou.org"
@@ -17,7 +17,7 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/nobsun/simple-interactive-program#readme>
+description:         Please see the README on GitHub at <https://github.com/nobsun/wordle#readme>
 
 dependencies:
 - base >= 4.7 && < 5
@@ -33,7 +33,7 @@ library:
   source-dirs: src
 
 executables:
-  simple-interactive-program:
+  wordle:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -41,10 +41,10 @@ executables:
     # - -threaded
     # - -with-rtsopts=-N
     dependencies:
-    - simple-interactive-program
+    - wordle
 
 tests:
-  simple-interactive-program-test:
+  wordle-test:
     main:                spec.hs
     source-dirs:         test
     # ghc-options:
@@ -52,11 +52,11 @@ tests:
     # - -rtsopts
     # - -with-rtsopts=-N
     dependencies:
-    - simple-interactive-program
+    - wordle
     - hspec
     - main-tester
 
-  simple-interactive-program-doctest:
+  wordle-doctest:
     main:                doctests.hs
     source-dirs:         test
     # ghc-options:
@@ -64,5 +64,5 @@ tests:
     # - -rtsopts
     # - -with-rtsopts=-N
     dependencies:
-    - simple-interactive-program
+    - wordle
     - doctest
