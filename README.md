@@ -1,5 +1,7 @@
 # wordle
 
+wordleパズルのチートプログラム
+
 ## 起動
 
 ```shell-session
