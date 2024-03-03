@@ -1,10 +1,10 @@
 name:                wordle
-version:             0.1.0.1
+version:             0.1.0.2
 github:              "nobsun/wordle"
 license:             BSD3
 author:              "Nobuo Yamashita"
 maintainer:          "nobsun@sampou.org"
-copyright:           "Copyright: (c) 2022 Nobuo Yamashita"
+copyright:           "Copyright: (c) 2022-2024 Nobuo Yamashita"
 
 extra-source-files:
 - README.md

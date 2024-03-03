@@ -8,7 +8,6 @@ import Data.Bool
 import Data.Char
 import Data.Maybe
 import Interact
-import Debug.Trace
 
 wordle :: String -> [String] -> [String]
 wordle extra = mapMaybe output . eval . initial extra
