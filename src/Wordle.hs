@@ -52,14 +52,23 @@ step state = case state of
                  , innerState = dict
                  } -> state { inChan = is
                             , innerState = dict'  
-                            , output = Just $ unlines dict'
+                            , output = msg
                             }
                         where
-                            guess:pattern:_ = words i
-                            dict' = buildFilter guess pattern dict
+                            (dict', msg) = case words i of
+                                guess:pattern:_
+                                    | all (`elem` "bgy") pattern 
+                                      && length pattern >= 5 -> (dict'', ok)
+                                    | otherwise -> (dict, ng)
+                                    where
+                                        ng    = Just $ "Error"
+                                                     ++ ": pattern contains other char than \"bgy\" or too short"
+                                        ok    = Just $ unlines dict'
+                                        dict'' = buildFilter guess pattern dict
+                                _ -> (dict, Just "pleas input both guess and pattern")
 
 buildFilter :: String -> String -> [String] -> [String]
-buildFilter _     ""  = id
+buildFilter _     ""      = id
 buildFilter guess pattern = filter p
     where
         p w = pattern == matchPattern guess w
