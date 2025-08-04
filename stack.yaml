@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-resolver: lts-24.2
-=======
-snapshot: nightly-2025-06-16
->>>>>>> refs/remotes/origin/main
-
+snapshot: lts-24.2
 packages:
 - .
 

@@ -65,7 +65,7 @@ step state = case state of
                                                      ++ ": pattern contains other char than \"bgy\" or too short"
                                         ok    = Just $ unlines dict'
                                         dict'' = buildFilter guess pattern dict
-                                _ -> (dict, Just "pleas input both guess and pattern")
+                                _ -> (dict, Just "please input both guess and pattern")
 
 buildFilter :: String -> String -> [String] -> [String]
 buildFilter _     ""      = id

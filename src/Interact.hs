@@ -2,6 +2,7 @@ module Interact
     ( interactWithPrompt
     ) where
 
+import Data.List
 import System.IO.Unsafe
 import System.Console.Haskeline
 
@@ -15,6 +16,6 @@ interactWithPrompt prompt quit f
             ; case minput of
                 Nothing   -> return []
                 Just line
-                    | line == quit -> return []
+                    | line `isPrefixOf` quit -> return []
                     | otherwise    -> (line :) <$> loop
             }
